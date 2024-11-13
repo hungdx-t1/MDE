@@ -1,4 +1,4 @@
-name: MD Expansion
+name: MDE
 version: '0.1-SNAPSHOT'
 main: com.minodx.MDExpansion.MDExpansion
 api-version: '1.20'
