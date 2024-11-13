@@ -5,4 +5,11 @@ api-version: '1.20'
 authors: [ MinoMC_YTB ]
 description: A simple plugin contains some configurable formats
 
-softdepend: ["PlaceholderAPI"]
+depend: [LuckPerms]
+softdepend: [PlaceholderAPI]
+
+commands:
+  mde:
+    description: Reload the configuration.
+    permission: mde.admin.reload
+    usage: "Usage: /mde reload"

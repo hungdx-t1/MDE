@@ -1,4 +1,12 @@
-chat-format: '%player_name%: %message%'
+#
+#  MinoDX's Expansion PLugin (Powered by MinoMC_YTB)
+#  Version: 0.1-SNAPSHOT-4
+#
 
-join-message: '&#7DDA58[+] &r%player_name% joined the server!'
-leave-message: '&#E4080A[-] &r%player_name% left the server.'
+#  Placeholders for chat format, support PlaceholderAPI:
+#  {player} - Get player name
+#  {message} - Get chat message
+chat-format: '{player}: {message}'
+
+join-message: '&#7DDA58[+] &r{player} joined the server!'
+leave-message: '&#E4080A[-] &r{player} left the server.'

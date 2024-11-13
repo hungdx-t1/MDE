@@ -1,28 +1,50 @@
 package com.minodx.MDExpansion.Expansion;
 
 import com.minodx.MDExpansion.MDExpansion;
+import com.minodx.MDExpansion.Utils.TranslateHexColorCodes;
 import me.clip.placeholderapi.PlaceholderAPI;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.Sound;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
+import org.bukkit.entity.Player;
+import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.AsyncPlayerChatEvent;
+import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
+import net.luckperms.api.LuckPerms;
+import net.luckperms.api.cacheddata.CachedMetaData;
+import org.bukkit.command.Command;
+import org.bukkit.command.CommandSender;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+import java.util.stream.Collectors;
 
 public class ChatFormatter implements Listener {
     private final MDExpansion plugin;
+    private LuckPerms luckPerms;
 
     public ChatFormatter(MDExpansion plugin) {
         this.plugin = plugin;
     }
 
-    @EventHandler
+    @EventHandler(priority = EventPriority.HIGHEST)
     public void onPlayerChat(AsyncPlayerChatEvent event) {
-        String format = plugin.getConfig().getString("chat-format");
+        String format = plugin.getConfig().getString("chat-format", "&8[&a{player}&8]: &#FFFFFF{message}");
         String message = format.replace("%player_name%", event.getPlayer().getName()).replace("%message%",event.getMessage());
 
+        // PlaceholderAPI Support
         message = PlaceholderAPI.setPlaceholders(event.getPlayer(), message);
+
+        // Hex color converter
+        TranslateHexColorCodes translator = new TranslateHexColorCodes();
+        message = translator.translateHexColorCodes(message);
+
         event.setFormat(ChatColor.translateAlternateColorCodes('&', message));
     }
 }
