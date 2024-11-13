@@ -4,3 +4,5 @@ main: com.minodx.MDExpansion.MDExpansion
 api-version: '1.20'
 authors: [ MinoMC_YTB ]
 description: A simple plugin contains some configurable formats
+
+softdepend: ["PlaceholderAPI"]

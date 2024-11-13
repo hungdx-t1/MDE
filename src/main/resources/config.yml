@@ -1,0 +1,4 @@
+chat-format: '%player_name%: %message%'
+
+join-message: '&#7DDA58[+] &r%player_name% joined the server!'
+leave-message: '&#E4080A[-] &r%player_name% left the server.'
