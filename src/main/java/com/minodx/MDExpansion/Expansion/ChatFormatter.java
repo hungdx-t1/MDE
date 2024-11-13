@@ -36,7 +36,7 @@ public class ChatFormatter implements Listener {
     @EventHandler(priority = EventPriority.HIGHEST)
     public void onPlayerChat(AsyncPlayerChatEvent event) {
         String format = plugin.getConfig().getString("chat-format", "&8[&a{player}&8]: &#FFFFFF{message}");
-        String message = format.replace("%player_name%", event.getPlayer().getName()).replace("%message%",event.getMessage());
+        String message = format.replace("{player}", event.getPlayer().getName()).replace("{message}",event.getMessage());
 
         // PlaceholderAPI Support
         message = PlaceholderAPI.setPlaceholders(event.getPlayer(), message);

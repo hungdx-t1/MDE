@@ -19,7 +19,7 @@ public class JoinLeaveFormatter implements Listener {
     @EventHandler
     public void onPlayerJoin(PlayerJoinEvent event) {
         String joinMessage = plugin.getConfig().getString("join-message", "&#00FF00Welcome {player} to the server!");
-        joinMessage = joinMessage.replace("%player_name%", event.getPlayer().getName());
+        joinMessage = joinMessage.replace("{player}", event.getPlayer().getName());
 
         // PlaceholderAPI Support
         joinMessage = PlaceholderAPI.setPlaceholders(event.getPlayer(), joinMessage);
@@ -34,7 +34,7 @@ public class JoinLeaveFormatter implements Listener {
     @EventHandler
     public void onPlayerLeave(PlayerQuitEvent event) {
         String leaveMessage = plugin.getConfig().getString("leave-message", "&#FF0000Goodbye {player}!");
-        leaveMessage = leaveMessage.replace("%player_name%", event.getPlayer().getName());
+        leaveMessage = leaveMessage.replace("{player}", event.getPlayer().getName());
 
         // PlaceholderAPI Support
         leaveMessage = PlaceholderAPI.setPlaceholders(event.getPlayer(), leaveMessage);
