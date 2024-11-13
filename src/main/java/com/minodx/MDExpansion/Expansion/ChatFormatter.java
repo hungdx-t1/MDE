@@ -20,7 +20,7 @@ public class ChatFormatter implements Listener {
     @EventHandler
     public void onPlayerChat(AsyncPlayerChatEvent event) {
         String format = plugin.getConfig().getString("chat-format");
-        String message = format.replace("%player_name", event.getPlayer().getName()).replace("%message%",event.getMessage());
+        String message = format.replace("%player_name%", event.getPlayer().getName()).replace("%message%",event.getMessage());
 
         message = PlaceholderAPI.setPlaceholders(event.getPlayer(), message);
         event.setFormat(ChatColor.translateAlternateColorCodes('&', message));

@@ -13,7 +13,7 @@ public final class MDExpansion extends JavaPlugin {
         // Plugin startup logic
 
         if(!Bukkit.getPluginManager().isPluginEnabled("PlaceholderAPI")) {
-            getLogger().severe(ChatColor.RED + "PlaceholderAPI is not installed, disabling...");
+            getLogger().severe("PlaceholderAPI is not installed, disabling...");
             Bukkit.getPluginManager().disablePlugin(this);
             return;
         }

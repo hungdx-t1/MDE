@@ -18,7 +18,7 @@ public class JoinLeaveFormatter implements Listener {
     @EventHandler
     public void onPlayerJoin(PlayerJoinEvent event) {
         String joinMessage = plugin.getConfig().getString("join-message");
-        joinMessage = joinMessage.replace("%player_name", event.getPlayer().getName());
+        joinMessage = joinMessage.replace("%player_name%", event.getPlayer().getName());
         joinMessage = PlaceholderAPI.setPlaceholders(event.getPlayer(), joinMessage);
 
         event.setJoinMessage(ChatColor.translateAlternateColorCodes('&', joinMessage));
@@ -27,7 +27,7 @@ public class JoinLeaveFormatter implements Listener {
     @EventHandler
     public void onPlayerLeave(PlayerQuitEvent event) {
         String leaveMessage = plugin.getConfig().getString("leave-message");
-        leaveMessage = leaveMessage.replace("%player_name", event.getPlayer().getName());
+        leaveMessage = leaveMessage.replace("%player_name%", event.getPlayer().getName());
         leaveMessage = PlaceholderAPI.setPlaceholders(event.getPlayer(), leaveMessage);
 
         event.setQuitMessage(ChatColor.translateAlternateColorCodes('&', leaveMessage));
