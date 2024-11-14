@@ -8,5 +8,16 @@
 #  {message} - Get chat message
 chat-format: '{player}: {message}'
 
-join-message: '&#7DDA58[+] &r{player} joined the server!'
-leave-message: '&#E4080A[-] &r{player} left the server.'
+join-message: '&a[+] &r{player} joined the server!'
+leave-message: '&c[-] &r{player} left the server.'
+
+scoreboard:
+  title: "&a&lYour Server"
+  lines:
+    - "&7Welcome, &f%player_name%"
+    - "&eOnline: &f%server_online%"
+    - "&6Ping: &f%player_ping%"
+    - "&aCoins: &f%vault_eco_balance%"
+    - ""
+    - "&bYour Rank: &f%luckperms_prefix%"
+    - "&cyourserver.com"

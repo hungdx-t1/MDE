@@ -7,6 +7,8 @@ import java.util.regex.Pattern;
 
 public class TranslateHexColorCodes {
 
+    // in maintenance
+
     private static final Pattern HEX_PATTERN = Pattern.compile("&#([A-Fa-f0-9]{6})");
 
     // Hex color translator

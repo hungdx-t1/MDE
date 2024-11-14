@@ -25,8 +25,9 @@ public class JoinLeaveFormatter implements Listener {
         joinMessage = PlaceholderAPI.setPlaceholders(event.getPlayer(), joinMessage);
 
         // Hex color changes
-        TranslateHexColorCodes translator = new TranslateHexColorCodes();
-        joinMessage = translator.translateHexColorCodes(joinMessage);
+
+        // TranslateHexColorCodes translator = new TranslateHexColorCodes();
+        // joinMessage = translator.translateHexColorCodes(joinMessage);
 
         event.setJoinMessage(ChatColor.translateAlternateColorCodes('&', joinMessage));
     }
@@ -40,8 +41,8 @@ public class JoinLeaveFormatter implements Listener {
         leaveMessage = PlaceholderAPI.setPlaceholders(event.getPlayer(), leaveMessage);
 
         // Hex color changes
-        TranslateHexColorCodes translator = new TranslateHexColorCodes();
-        leaveMessage = translator.translateHexColorCodes(leaveMessage);
+        // TranslateHexColorCodes translator = new TranslateHexColorCodes();
+        // leaveMessage = translator.translateHexColorCodes(leaveMessage);
 
         event.setQuitMessage(ChatColor.translateAlternateColorCodes('&', leaveMessage));
     }

@@ -25,8 +25,8 @@ public class ChatFormatter implements Listener {
         message = PlaceholderAPI.setPlaceholders(event.getPlayer(), message);
 
         // Hex color converter
-        TranslateHexColorCodes translator = new TranslateHexColorCodes();
-        message = translator.translateHexColorCodes(message);
+        // TranslateHexColorCodes translator = new TranslateHexColorCodes();
+        // message = translator.translateHexColorCodes(message);
 
         event.setFormat(ChatColor.translateAlternateColorCodes('&', message));
     }

@@ -9,7 +9,7 @@ depend: [LuckPerms, PlaceholderAPI]
 
 commands:
   mde:
-    description: Reload the configuration.
+    description: Plugin main command.
     permission: mde.admin.reload
     usage: "Usage: /mde reload"
     aliases: [mder, mdereload]
