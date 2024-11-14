@@ -1,7 +1,6 @@
-package com.minodx.MDExpansion.Utils;
+package com.minodx.MDExpansion.utils;
 
 import org.bukkit.ChatColor;
-import org.bukkit.Translatable;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;

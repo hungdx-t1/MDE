@@ -1,8 +1,7 @@
 package com.minodx.MDExpansion;
 
-import com.minodx.MDExpansion.Expansion.ChatFormatter;
-import com.minodx.MDExpansion.Expansion.JoinLeaveFormatter;
-import net.luckperms.api.LuckPerms;
+import com.minodx.MDExpansion.expansions.ChatFormatter;
+import com.minodx.MDExpansion.expansions.JoinLeaveFormatter;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -12,32 +11,12 @@ import org.bukkit.command.CommandSender;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-import java.util.stream.Collectors;
 
 public final class MDExpansion extends JavaPlugin {
-
-    private LuckPerms luckPerms;
 
     @Override
     public void onEnable() {
         // Plugin startup logic
-
-        if(!Bukkit.getPluginManager().isPluginEnabled("LuckPerms")) {
-            getLogger().severe("LuckPerms is not installed, disabling...");
-            Bukkit.getPluginManager().disablePlugin(this);
-            return;
-        }
-
-        if(!Bukkit.getPluginManager().isPluginEnabled("PlaceholderAPI")) {
-            getLogger().severe("PlaceholderAPI is not installed, disabling...");
-            Bukkit.getPluginManager().disablePlugin(this);
-            return;
-        }
-
-        this.luckPerms = getServer().getServicesManager().load(LuckPerms.class);
-
         saveDefaultConfig();
 
         getServer().getPluginManager().registerEvents(new ChatFormatter(this), this);

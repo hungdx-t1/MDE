@@ -1,7 +1,7 @@
-package com.minodx.MDExpansion.Expansion;
+package com.minodx.MDExpansion.expansions;
 
 import com.minodx.MDExpansion.MDExpansion;
-import com.minodx.MDExpansion.Utils.TranslateHexColorCodes;
+import com.minodx.MDExpansion.utils.TranslateHexColorCodes;
 import me.clip.placeholderapi.PlaceholderAPI;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
