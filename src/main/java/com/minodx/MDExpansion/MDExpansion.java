@@ -19,9 +19,19 @@ public final class MDExpansion extends JavaPlugin {
 
     private ScoreboardManager scoreboardManager;
 
+    private boolean serverPaperSupport(String javaVersion) {
+        return javaVersion.startsWith("17") || javaVersion.startsWith("1.8") && Integer.parseInt(javaVersion.split("\\.")[0]) >= 17;
+    }
+
     @Override
     public void onEnable() {
         // Plugin startup logic
+        String javaVersion = System.getProperty("java.version");
+        if(!serverPaperSupport(javaVersion)) {
+            getLogger().severe("This plugin requires Java 17 or higher! Disabling plugin...");
+            Bukkit.getPluginManager().disablePlugin(this);
+            return;
+        }
         saveDefaultConfig();
         scoreboardManager = new ScoreboardManager(this);
 
