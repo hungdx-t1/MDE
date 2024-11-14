@@ -21,3 +21,7 @@ scoreboard:
     - ""
     - "&bYour Rank: &f%luckperms_prefix%"
     - "&cyourserver.com"
+
+tab-format:
+  header: "&aWelcome!"
+  footer: "&bHave a great time!"
